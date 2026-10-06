@@ -1130,3 +1130,23 @@ footer p {
     }
 
 }
+/* Business cards mobile spacing fix */
+@media (max-width: 700px) {
+
+    .business-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 35px;
+    }
+
+    .business-card {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .business-grid + .page-intro {
+        margin-top: 30px;
+    }
+
+}

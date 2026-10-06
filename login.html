@@ -1,158 +1,205 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <title>Login - Global News</title>
+<title>Login | Global News</title>
 
-    <meta name="description"
-        content="Login to your Global News account.">
+<meta name="description"
+    content="Login to your Global News account to access your account.">
 
-    <link rel="stylesheet" href="style.css">
+<!-- Login page should not appear in Google search results -->
+<meta name="robots"
+    content="noindex, nofollow">
+
+<link rel="canonical"
+    href="https://mzuhaibali-web.github.io/global-news/login.html">
+
+<link rel="stylesheet"
+    href="style.css">
+```
 
 </head>
 
 <body>
 
+```
+<!-- HEADER -->
 
-    <!-- HEADER -->
+<header>
 
-    <header>
+    <div class="logo">
+        GLOBAL NEWS
+    </div>
 
-        <div class="logo">
-            GLOBAL NEWS
+    <p>
+        News From Around The World
+    </p>
+
+</header>
+
+
+<!-- NAVBAR -->
+
+<nav aria-label="Main navigation">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="countries.html">
+        Countries
+    </a>
+
+    <a href="business.html">
+        Business
+    </a>
+
+    <a href="technology.html">
+        Technology
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+    <a href="privacy.html">
+        Privacy Policy
+    </a>
+
+    <a href="login.html"
+        aria-current="page">
+        Login
+    </a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main>
+
+    <section class="auth-container"
+        aria-labelledby="login-heading">
+
+        <div class="auth-box">
+
+            <h1 id="login-heading">
+                Welcome Back
+            </h1>
+
+            <p class="auth-text">
+                Login to your Global News account
+            </p>
+
+
+            <form id="loginForm">
+
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required>
+
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required>
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+
+            </form>
+
+
+            <p class="signup-text">
+
+                Don't have an account?
+
+                <a href="signup.html">
+                    Create Account
+                </a>
+
+            </p>
+
+
         </div>
 
-        <p>
-            News From Around The World
-        </p>
+    </section>
 
-    </header>
+</main>
 
 
-    <!-- NAVBAR -->
+<!-- FOOTER -->
 
-    <nav>
+<footer>
 
-        <a href="index.html">Home</a>
+    <h3>
+        GLOBAL NEWS
+    </h3>
 
-        <a href="countries.html">Countries</a>
+    <p>
+        News From Around The World
+    </p>
 
-        <a href="business.html">Business</a>
+    <p>
 
-        <a href="technology.html">Technology</a>
+        <a href="about.html">
+            About
+        </a>
+        |
+        <a href="privacy.html">
+            Privacy Policy
+        </a>
+        |
+        <a href="contact.html">
+            Contact
+        </a>
 
-        <a href="contact.html">Contact</a>
+    </p>
 
-        <a href="about.html">About</a>
+    <p>
+        © 2026 Global News. All Rights Reserved.
+    </p>
 
-        <a href="privacy.html">Privacy Policy</a>
-
-        <a href="login.html">Login</a>
-
-    </nav>
-
-
-    <!-- MAIN -->
-
-    <main>
-
-        <div class="auth-container">
-
-            <div class="auth-box">
-
-                <h1>
-                    Welcome Back
-                </h1>
-
-                <p class="auth-text">
-                    Login to your Global News account
-                </p>
+</footer>
 
 
-                <form id="loginForm">
+<!-- SUPABASE -->
 
-                    <label>
-                        Email
-                    </label>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-                    <input
-                        type="email"
-                        id="loginEmail"
-                        placeholder="Enter your email"
-                        required>
-
-
-                    <label>
-                        Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="loginPassword"
-                        placeholder="Enter your password"
-                        required>
-
-
-                    <button type="submit">
-                        Login
-                    </button>
-
-                </form>
-
-
-                <p class="signup-text">
-
-                    Don't have an account?
-
-                    <a href="signup.html">
-                        Create Account
-                    </a>
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <h3>
-            GLOBAL NEWS
-        </h3>
-
-        <p>
-            News From Around The World
-        </p>
-
-        <p>
-            <a href="about.html">About</a> |
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="contact.html">Contact</a>
-        </p>
-
-        <p>
-            © 2026 Global News. All Rights Reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- SUPABASE -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
+```
 
 </body>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mzuhaibali-web.github.io/global-news/sitemap.xml

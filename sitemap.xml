@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/index.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/</loc>
     </url>
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/countries.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/countries.html</loc>
     </url>
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/news.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/news.html</loc>
     </url>
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/business.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/business.html</loc>
     </url>
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/technology.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/technology.html</loc>
     </url>
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/contact.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/contact.html</loc>
     </url>
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/about.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/about.html</loc>
     </url>
 
     <url>
-        <loc>YOUR-WEBSITE-LINK/privacy.html</loc>
+        <loc>https://mzuhaibali-web.github.io/global-news/privacy.html</loc>
     </url>
 
 </urlset>

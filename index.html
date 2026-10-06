@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Global News - Latest World News</title>
+    <title>Global News | Latest World, Business & Technology News</title>
 
     <meta name="description"
-        content="Global News brings you the latest international news, business, technology and world updates from around the globe.">
+        content="Global News provides the latest world news, international updates, business, technology and country news from around the globe.">
 
-        <meta name="google-site-verification" content="TVo11DXll26Cw_07wF69jOlOWoGnNGh7wlmInBK0wzA" />
+    <meta name="google-site-verification"
+        content="TVo11DXll26Cw_07wF69jOlOWoGnNGh7wlmInBK0wzA" />
+
+    <link rel="canonical"
+        href="https://mzuhaibali-web.github.io/global-news/">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -30,29 +35,40 @@
 
 
     <!-- NAVBAR -->
-    <nav>
+    <nav aria-label="Main navigation">
+
         <a href="index.html">Home</a>
+
         <a href="countries.html">Countries</a>
+
         <a href="business.html">Business</a>
+
         <a href="technology.html">Technology</a>
+
         <a href="contact.html">Contact</a>
+
         <a href="about.html">About</a>
+
         <a href="privacy.html">Privacy Policy</a>
+
         <a href="login.html">Login</a>
+
     </nav>
 
 
     <!-- BREAKING NEWS -->
-    <section class="breaking">
+    <section class="breaking" aria-label="Breaking news">
+
         <strong>BREAKING</strong>
 
         <span>
             Latest international news and world updates
         </span>
+
     </section>
 
 
-    <!-- MAIN -->
+    <!-- MAIN CONTENT -->
     <main>
 
         <!-- FEATURED NEWS -->
@@ -60,7 +76,9 @@
 
             <img
                 src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80"
-                alt="Global News">
+                alt="International news and world news coverage"
+                width="1200"
+                height="800">
 
             <div class="featured-content">
 
@@ -69,12 +87,12 @@
                 </span>
 
                 <h1>
-                    Latest News From Around The World
+                    Latest World News and International Updates
                 </h1>
 
                 <p>
-                    Get important international news and world updates
-                    from different countries.
+                    Get the latest international news, world events and
+                    important updates from different countries around the globe.
                 </p>
 
                 <a href="news.html">
@@ -87,125 +105,157 @@
 
 
         <!-- LATEST NEWS -->
-        <h2 class="section-title">
-            Latest News
-        </h2>
+        <section aria-labelledby="latest-news-heading">
 
-
-        <div class="news-container">
-
-            <article class="news-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80"
-                    alt="World News">
-
-                <div class="news-content">
-
-                    <span class="category">
-                        WORLD
-                    </span>
-
-                    <h3>
-                        International News And Global Updates
-                    </h3>
-
-                    <p>
-                        Latest developments and important stories
-                        from around the world.
-                    </p>
-
-                    <a href="news.html">
-                        Read More →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="news-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80"
-                    alt="Business News">
-
-                <div class="news-content">
-
-                    <span class="category">
-                        BUSINESS
-                    </span>
-
-                    <h3>
-                        Global Business And Economy News
-                    </h3>
-
-                    <p>
-                        Business, markets, companies and economic
-                        developments from around the world.
-                    </p>
-
-                    <a href="business.html">
-                        Read More →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="news-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
-                    alt="Technology News">
-
-                <div class="news-content">
-
-                    <span class="category">
-                        TECHNOLOGY
-                    </span>
-
-                    <h3>
-                        Latest Technology And Innovation
-                    </h3>
-
-                    <p>
-                        Discover technology news, innovation,
-                        AI and digital developments.
-                    </p>
-
-                    <a href="technology.html">
-                        Read More →
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- COUNTRIES -->
-        <section class="countries">
-
-            <h2 class="section-title">
-                News By Country
+            <h2 id="latest-news-heading" class="section-title">
+                Latest World News
             </h2>
+
+            <div class="news-container">
+
+
+                <!-- WORLD NEWS -->
+                <article class="news-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80"
+                        alt="International world news and global updates"
+                        loading="lazy"
+                        width="800"
+                        height="533">
+
+                    <div class="news-content">
+
+                        <span class="category">
+                            WORLD
+                        </span>
+
+                        <h3>
+                            International News and Global Updates
+                        </h3>
+
+                        <p>
+                            Follow important international developments,
+                            world events and major stories from around the globe.
+                        </p>
+
+                        <a href="news.html">
+                            Read More About World News →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BUSINESS NEWS -->
+                <article class="news-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80"
+                        alt="Global business and economy news"
+                        loading="lazy"
+                        width="800"
+                        height="533">
+
+                    <div class="news-content">
+
+                        <span class="category">
+                            BUSINESS
+                        </span>
+
+                        <h3>
+                            Global Business and Economy News
+                        </h3>
+
+                        <p>
+                            Business, markets, companies and economic
+                            developments from around the world.
+                        </p>
+
+                        <a href="business.html">
+                            Read More About Business News →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TECHNOLOGY NEWS -->
+                <article class="news-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                        alt="Technology, artificial intelligence and innovation news"
+                        loading="lazy"
+                        width="800"
+                        height="533">
+
+                    <div class="news-content">
+
+                        <span class="category">
+                            TECHNOLOGY
+                        </span>
+
+                        <h3>
+                            Latest Technology, AI and Innovation News
+                        </h3>
+
+                        <p>
+                            Discover technology news, artificial intelligence,
+                            innovation and digital developments.
+                        </p>
+
+                        <a href="technology.html">
+                            Read More About Technology →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEWS BY COUNTRY -->
+        <section class="countries" aria-labelledby="country-news-heading">
+
+            <h2 id="country-news-heading" class="section-title">
+                World News By Country
+            </h2>
+
+            <p>
+                Explore international news and updates by country.
+            </p>
 
             <div class="country-grid">
 
-                <a href="countries.html">🇺🇸 USA</a>
+                <a href="countries.html" aria-label="USA news">
+                    🇺🇸 USA
+                </a>
 
-                <a href="countries.html">🇬🇧 UK</a>
+                <a href="countries.html" aria-label="UK news">
+                    🇬🇧 UK
+                </a>
 
-                <a href="countries.html">🇨🇦 Canada</a>
+                <a href="countries.html" aria-label="Canada news">
+                    🇨🇦 Canada
+                </a>
 
-                <a href="countries.html">🇦🇺 Australia</a>
+                <a href="countries.html" aria-label="Australia news">
+                    🇦🇺 Australia
+                </a>
 
-                <a href="countries.html">🇦🇪 UAE</a>
+                <a href="countries.html" aria-label="UAE news">
+                    🇦🇪 UAE
+                </a>
 
-                <a href="countries.html">🇵🇰 Pakistan</a>
+                <a href="countries.html" aria-label="Pakistan news">
+                    🇵🇰 Pakistan
+                </a>
 
             </div>
 
@@ -240,3 +290,4 @@
 </body>
 
 </html>
+```

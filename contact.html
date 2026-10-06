@@ -1,203 +1,287 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us - Global News</title>
+<title>Contact Global News | Questions, Feedback & News Tips</title>
 
-    <meta name="description"
-        content="Contact Global News for questions, feedback, suggestions and general inquiries.">
+<meta name="description"
+    content="Contact Global News for questions, feedback, suggestions and news tips about international, business and technology news.">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="canonical"
+    href="https://mzuhaibali-web.github.io/global-news/contact.html">
+
+<link rel="stylesheet"
+    href="style.css">
+```
 
 </head>
 
 <body>
 
+```
+<!-- HEADER -->
 
-    <!-- HEADER -->
+<header>
 
-    <header>
+    <div class="logo">
+        GLOBAL NEWS
+    </div>
 
-        <div class="logo">
-            GLOBAL NEWS
-        </div>
+    <p>
+        News From Around The World
+    </p>
+
+</header>
+
+
+<!-- NAVBAR -->
+
+<nav aria-label="Main navigation">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="countries.html">
+        Countries
+    </a>
+
+    <a href="business.html">
+        Business
+    </a>
+
+    <a href="technology.html">
+        Technology
+    </a>
+
+    <a href="contact.html"
+        aria-current="page">
+        Contact
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+    <a href="privacy.html">
+        Privacy Policy
+    </a>
+
+    <a href="login.html">
+        Login
+    </a>
+
+</nav>
+
+
+<!-- BREAKING -->
+
+<section class="breaking"
+    aria-label="Contact information">
+
+    <strong>
+        CONTACT
+    </strong>
+
+    <span>
+        Get in touch with Global News
+    </span>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main>
+
+
+    <section class="page-intro"
+        aria-labelledby="contact-heading">
+
+        <h1 id="contact-heading">
+            Contact Global News
+        </h1>
 
         <p>
-            News From Around The World
+            Have a question, suggestion, news tip or
+            feedback? Contact the Global News team.
         </p>
-
-    </header>
-
-
-    <!-- NAVBAR -->
-
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="countries.html">Countries</a>
-
-        <a href="business.html">Business</a>
-
-        <a href="technology.html">Technology</a>
-
-        <a href="contact.html">Contact</a>
-
-        <a href="about.html">About</a>
-
-        <a href="privacy.html">Privacy Policy</a>
-
-        <a href="login.html">Login</a>
-
-    </nav>
-
-
-    <!-- BREAKING -->
-
-    <section class="breaking">
-
-        <strong>
-            CONTACT
-        </strong>
-
-        <span>
-            Get in touch with Global News
-        </span>
 
     </section>
 
 
-    <!-- MAIN -->
+    <section class="contact-container"
+        aria-label="Contact Global News">
 
-    <main>
 
-        <div class="page-intro">
+        <!-- CONTACT INFORMATION -->
 
-            <h1>
-                Contact Us
-            </h1>
+        <div class="contact-info">
+
+            <h2>
+                Get In Touch
+            </h2>
 
             <p>
-                Have a question, suggestion or feedback?
-                Contact the Global News team.
+                We welcome your questions, suggestions,
+                feedback and general inquiries.
+            </p>
+
+            <p>
+                <strong>
+                    Email:
+                </strong>
+
+                contact@globalnews.com
+            </p>
+
+            <p>
+                <strong>
+                    Website:
+                </strong>
+
+                Global News
             </p>
 
         </div>
 
 
-        <div class="contact-container">
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+            <h2>
+                Send Us A Message
+            </h2>
+
+            <form>
 
 
-            <!-- CONTACT INFORMATION -->
+                <label for="contact-name">
+                    Name
+                </label>
 
-            <div class="contact-info">
-
-                <h2>
-                    Get In Touch
-                </h2>
-
-                <p>
-                    We welcome your questions, suggestions
-                    and feedback.
-                </p>
-
-                <p>
-                    <strong>Email:</strong>
-                    contact@globalnews.com
-                </p>
-
-                <p>
-                    <strong>Website:</strong>
-                    Global News
-                </p>
-
-            </div>
+                <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required>
 
 
-            <!-- CONTACT FORM -->
+                <label for="contact-email">
+                    Email
+                </label>
 
-            <div class="contact-form">
-
-                <h2>
-                    Send Us A Message
-                </h2>
-
-                <form>
-
-                    <label>
-                        Name
-                    </label>
-
-                    <input
-                        type="text"
-                        placeholder="Enter your name"
-                        required>
+                <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required>
 
 
-                    <label>
-                        Email
-                    </label>
+                <label for="contact-message">
+                    Message
+                </label>
 
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        required>
-
-
-                    <label>
-                        Message
-                    </label>
-
-                    <textarea
-                        placeholder="Write your message"
-                        rows="6"
-                        required></textarea>
+                <textarea
+                    id="contact-message"
+                    name="message"
+                    placeholder="Write your message"
+                    rows="6"
+                    required></textarea>
 
 
-                    <button type="submit">
-                        Send Message
-                    </button>
+                <button type="submit">
+                    Send Message
+                </button>
 
-                </form>
 
-            </div>
-
+            </form>
 
         </div>
 
-    </main>
+
+    </section>
 
 
-    <!-- FOOTER -->
+    <!-- INTERNAL LINKS -->
 
-    <footer>
+    <section class="page-intro"
+        aria-labelledby="more-information">
 
-        <h3>
-            GLOBAL NEWS
-        </h3>
-
-        <p>
-            News From Around The World
-        </p>
+        <h2 id="more-information">
+            Learn More About Global News
+        </h2>
 
         <p>
-            <a href="about.html">About</a> |
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="contact.html">Contact</a>
+
+            Learn more
+            <a href="about.html">
+                about Global News
+            </a>,
+            read our
+            <a href="privacy.html">
+                Privacy Policy
+            </a>,
+            or explore the latest
+            <a href="news.html">
+                international news
+            </a>.
+
         </p>
 
-        <p>
-            © 2026 Global News. All Rights Reserved.
-        </p>
+    </section>
 
-    </footer>
 
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        GLOBAL NEWS
+    </h3>
+
+    <p>
+        News From Around The World
+    </p>
+
+    <p>
+
+        <a href="about.html">
+            About
+        </a>
+        |
+        <a href="privacy.html">
+            Privacy Policy
+        </a>
+        |
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </p>
+
+    <p>
+        © 2026 Global News. All Rights Reserved.
+    </p>
+
+</footer>
+```
 
 </body>
 

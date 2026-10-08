@@ -1150,3 +1150,23 @@ footer p {
     }
 
 }
+/* Article image fix */
+.news-article {
+    overflow: hidden;
+}
+
+.article-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 0 30px 0;
+}
+
+.related-news {
+    clear: both;
+    position: relative;
+    margin-top: 40px;
+}

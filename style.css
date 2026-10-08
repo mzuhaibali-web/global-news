@@ -1170,3 +1170,81 @@ footer p {
     position: relative;
     margin-top: 40px;
 }
+/* Related News section fix */
+
+.related-news-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    box-sizing: border-box;
+}
+
+.related-news-section h2 {
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.related-news-section p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.related-news-section .read-more {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+/* Breaking News Bar */
+
+.breaking-news {
+    width: 100%;
+    background: #dc2626;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.breaking-news strong {
+    font-weight: 700;
+    margin-right: 8px;
+}
+/* Related News Cards */
+
+.related-news-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    box-sizing: border-box;
+}
+
+.related-news-section h2 {
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.related-news-section p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.related-news-section .news-card {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+    .related-news-section {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+}

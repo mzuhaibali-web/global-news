@@ -1367,3 +1367,19 @@ main > .page-intro p {
     }
 }
 
+
+/* Explore More section spacing */
+main > .page-intro:last-child {
+    margin-top: 45px;
+    padding-top: 20px;
+    clear: both;
+}
+
+main > .page-intro:last-child h2 {
+    margin-bottom: 20px;
+}
+
+main > .page-intro:last-child p {
+    line-height: 1.9;
+    margin-bottom: 20px;
+}

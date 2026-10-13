@@ -1248,3 +1248,122 @@ footer p {
         padding: 20px;
     }
 }
+/* FIX: Breaking news line on mobile */
+.breaking {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.breaking strong {
+    flex-shrink: 0;
+}
+
+.breaking span {
+    flex: 1 1 220px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+
+/* FIX: Separate About section from country section */
+.countries {
+    margin-bottom: 35px;
+}
+
+main > section[aria-labelledby="about-global-news-heading"] {
+    display: block;
+    clear: both;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 35px 0;
+    padding: 25px;
+    line-height: 1.7;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .breaking {
+        align-items: flex-start;
+        gap: 6px;
+        padding: 12px 15px;
+    }
+
+    .breaking span {
+        flex-basis: 100%;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    main > section[aria-labelledby="about-global-news-heading"] {
+        margin: 25px 0;
+        padding: 18px 15px;
+    }
+}
+/* Business page spacing improvements */
+main > .page-intro {
+    margin: 35px auto 30px;
+    padding: 0 20px;
+    max-width: 1000px;
+    line-height: 1.8;
+}
+
+main > .page-intro h1,
+main > .page-intro h2 {
+    margin: 0 0 18px;
+    line-height: 1.4;
+    color: #111827;
+}
+
+main > .page-intro h3 {
+    margin: 30px 0 12px;
+    line-height: 1.5;
+    color: #111827;
+}
+
+main > .page-intro p {
+    margin: 0 0 20px;
+    line-height: 1.9;
+}
+
+.business-grid {
+    gap: 25px;
+    margin: 30px 20px 40px;
+}
+
+.business-card {
+    padding-bottom: 22px;
+}
+
+.business-card h2,
+.business-card h3 {
+    margin: 20px 20px 12px;
+    line-height: 1.5;
+}
+
+.business-card p {
+    margin: 0 20px 18px;
+    line-height: 1.8;
+}
+
+.business-card a {
+    display: inline-block;
+    margin: 0 20px;
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+    main > .page-intro {
+        margin: 25px auto;
+        padding: 0 16px;
+    }
+
+    .business-grid {
+        margin: 20px 16px 30px;
+        gap: 25px;
+    }
+}
+

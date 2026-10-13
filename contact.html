@@ -1,199 +1,110 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contact Us | Global News</title>
-
-    <meta name="description"
-        content="Contact Global News for questions, feedback, suggestions and general inquiries.">
-
-    <link rel="canonical"
-        href="https://mzuhaibali-web.github.io/global-news/contact.html">
-
+    <meta name="description" content="Contact Global News for questions, feedback, suggestions and general inquiries.">
+    <link rel="canonical" href="https://mzuhaibali-web.github.io/global-news/contact.html">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            GLOBAL NEWS
-        </div>
+<header>
+    <div class="logo">GLOBAL NEWS</div>
+    <p>News From Around The World</p>
+</header>
 
-        <p>News From Around The World</p>
-    </header>
+<nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="countries.html">Countries</a>
+    <a href="business.html">Business</a>
+    <a href="technology.html">Technology</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="login.html">Login</a>
+</nav>
 
-    <!-- NAVBAR -->
-    <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="countries.html">Countries</a>
-        <a href="business.html">Business</a>
-        <a href="technology.html">Technology</a>
-        <a href="contact.html" aria-current="page">Contact</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="login.html">Login</a>
-    </nav>
+<section class="breaking" aria-label="Contact information">
+    <strong>CONTACT</strong>
+    <span>Get in touch with Global News</span>
+</section>
 
-    <!-- BREAKING -->
-    <section class="breaking" aria-label="Contact information">
-        <strong>CONTACT</strong>
-        <span>Get in touch with Global News</span>
-    </section>
+<main>
+    <div class="page-intro">
+        <h1>Contact Us</h1>
+        <p>Have a question, suggestion or feedback? Contact the Global News team.</p>
+    </div>
 
-    <!-- MAIN -->
-    <main>
-
-        <div class="page-intro">
-            <h1>Contact Us</h1>
-
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>We welcome your questions, suggestions and feedback.</p>
             <p>
-                Have a question, suggestion or feedback?
-                Contact the Global News team.
+                <strong>Email:</strong>
+                <a href="mailto:m.zuhaibali908@gmail.com">m.zuhaibali908@gmail.com</a>
             </p>
+            <p><strong>Website:</strong> Global News</p>
         </div>
 
-        <div class="contact-container">
+        <div class="contact-form">
+            <h2>Send Us A Message</h2>
 
-            <!-- CONTACT INFORMATION -->
-            <div class="contact-info">
-                <h2>Get In Touch</h2>
+            <form action="https://formsubmit.co/88014e1dfcc7943a818a98f91573f96c" method="POST">
+                <input type="hidden" name="_subject" value="New message from Global News website">
+                <input type="hidden" name="_next" value="https://mzuhaibali-web.github.io/global-news/contact.html?sent=1">
 
-                <p>
-                    We welcome your questions, suggestions
-                    and feedback.
-                </p>
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" name="name" placeholder="Enter your name" autocomplete="name" maxlength="100" required>
 
-                <p>
-                    <strong>Email:</strong>
-                    <a href="mailto:m.zuhaibali908@gmail.com">
-                        m.zuhaibali908@gmail.com
-                    </a>
-                </p>
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" name="email" placeholder="Enter your email" autocomplete="email" maxlength="254" required>
 
-                <p>
-                    <strong>Website:</strong>
-                    Global News
-                </p>
-            </div>
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="message" placeholder="Write your message" rows="6" maxlength="5000" required></textarea>
 
-            <!-- CONTACT FORM -->
-            <div class="contact-form">
-                <h2>Send Us A Message</h2>
+                <button type="submit">Send Message</button>
+            </form>
 
-                <form
-                    action="https://formsubmit.co/88014e1dfcc7943a818a98f91573f96c"
-                    method="POST">
-
-                    <!-- Email subject -->
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New message from Global News website">
-
-                    <!-- Redirect after successful submission -->
-                    <input
-                        type="hidden"
-                        name="_next"
-                        value="https://mzuhaibali-web.github.io/global-news/contact.html?sent=1">
-
-                    <!-- Name -->
-                    <label for="contactName">Name</label>
-
-                    <input
-                        type="text"
-                        id="contactName"
-                        name="name"
-                        placeholder="Enter your name"
-                        autocomplete="name"
-                        maxlength="100"
-                        required>
-
-                    <!-- Email -->
-                    <label for="contactEmail">Email</label>
-
-                    <input
-                        type="email"
-                        id="contactEmail"
-                        name="email"
-                        placeholder="Enter your email"
-                        autocomplete="email"
-                        maxlength="254"
-                        required>
-
-                    <!-- Message -->
-                    <label for="contactMessage">Message</label>
-
-                    <textarea
-                        id="contactMessage"
-                        name="message"
-                        placeholder="Write your message"
-                        rows="6"
-                        maxlength="5000"
-                        required></textarea>
-
-                    <!-- Submit -->
-                    <button type="submit">
-                        Send Message
-                    </button>
-
-                </form>
-
-                <p>
-                    Please do not include passwords or other sensitive
-                    personal information in your message.
-                </p>
-            </div>
-
+            <p>Please do not include passwords or other sensitive personal information in your message.</p>
         </div>
+    </div>
+</main>
 
-    </main>
+<footer>
+    <h3>GLOBAL NEWS</h3>
+    <p>News From Around The World</p>
+    <p>
+        <a href="about.html">About</a> |
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="contact.html">Contact</a>
+    </p>
+    <p>© 2026 Global News. All Rights Reserved.</p>
+</footer>
 
-    <!-- FOOTER -->
-    <footer>
-        <h3>GLOBAL NEWS</h3>
+<script>
+    const params = new URLSearchParams(window.location.search);
 
-        <p>News From Around The World</p>
+    if (params.get("sent") === "1") {
+        const notice = document.createElement("p");
+        notice.textContent =
+            "Your message may have been submitted. Please check the form service response to confirm.";
+        notice.setAttribute("role", "status");
+        notice.style.padding = "12px";
+        notice.style.margin = "15px auto";
+        notice.style.maxWidth = "700px";
 
-        <p>
-            <a href="about.html">About</a> |
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="contact.html">Contact</a>
-        </p>
-
-        <p>© 2026 Global News. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Submission confirmation message -->
-    <script>
-        const params = new URLSearchParams(window.location.search);
-
-        if (params.get("sent") === "1") {
-            const notice = document.createElement("p");
-            notice.textContent =
-                "Your message may have been submitted. Please check the form service response to confirm.";
-            notice.setAttribute("role", "status");
-            notice.style.padding = "12px";
-            notice.style.margin = "15px auto";
-            notice.style.maxWidth = "700px";
-
-            const main = document.querySelector("main");
-            if (main) {
-                main.prepend(notice);
-            }
-
-            window.history.replaceState(
-                {},
-                document.title,
-                window.location.pathname
-            );
+        const main = document.querySelector("main");
+        if (main) {
+            main.prepend(notice);
         }
-    </script>
+
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+</script>
 
 </body>
 </html>
+```

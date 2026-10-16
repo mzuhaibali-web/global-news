@@ -1,200 +1,136 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-<title>Login | Global News</title>
-
-<meta name="description"
-    content="Login to your Global News account to access your account.">
-
-<!-- Login page should not appear in Google search results -->
-<meta name="robots"
-    content="noindex, nofollow">
-
-<link rel="canonical"
-    href="https://mzuhaibali-web.github.io/global-news/login.html">
-
-<link rel="stylesheet"
-    href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password - Global News</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-
 <body>
+  <main class="auth-container">
+    <h1>Reset Your Password</h1>
+    <p>Enter your new password below.</p>
 
-<!-- HEADER -->
+    <form id="resetForm">
+      <label for="password">New Password</label>
+      <input type="password" id="password" minlength="8"
+        placeholder="Enter new password" required>
 
-<header>
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" minlength="8"
+        placeholder="Confirm new password" required>
 
-    <div class="logo">
-        GLOBAL NEWS
-    </div>
+      <button type="submit" id="resetBtn" disabled>Update Password</button>
+      <p id="message" role="status" aria-live="polite">Checking recovery link...</p>
+    </form>
 
-    <p>
-        News From Around The World
-    </p>
+    <p><a href="login.html">Back to Login</a></p>
+  </main>
 
-</header>
+  <script>
+    const SUPABASE_URL = "https://dcliuifevgyynbdmtjhk.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_vqUJWs3PUS7Qj4vYuleyFg_0c9DgsI_";
 
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
 
-<!-- NAVBAR -->
+    const resetForm = document.getElementById("resetForm");
+    const message = document.getElementById("message");
+    const resetBtn = document.getElementById("resetBtn");
 
-<nav aria-label="Main navigation">
+    let recoveryReady = false;
 
-    <a href="index.html">
-        Home
-    </a>
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      if (event === "PASSWORD_RECOVERY" && session) {
+        recoveryReady = true;
+        resetBtn.disabled = false;
+        message.textContent = "Recovery link verified. Enter your new password.";
+      }
+    });
 
-    <a href="countries.html">
-        Countries
-    </a>
+    async function checkRecoverySession() {
+      try {
+        const params = new URLSearchParams(window.location.hash.slice(1));
+        const query = new URLSearchParams(window.location.search);
 
-    <a href="business.html">
-        Business
-    </a>
+        const tokenHash = query.get("token_hash");
+        const type = query.get("type") || params.get("type");
+        const accessToken = params.get("access_token");
+        const refreshToken = params.get("refresh_token");
 
-    <a href="technology.html">
-        Technology
-    </a>
+        if (tokenHash && type === "recovery") {
+          const { error } = await supabaseClient.auth.verifyOtp({
+            token_hash: tokenHash,
+            type: "recovery"
+          });
+          if (error) throw error;
+        } else if (accessToken && refreshToken && type === "recovery") {
+          const { error } = await supabaseClient.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken
+          });
+          if (error) throw error;
+        }
 
-    <a href="contact.html">
-        Contact
-    </a>
+        const { data, error } = await supabaseClient.auth.getSession();
+        if (error) throw error;
 
-    <a href="about.html">
-        About
-    </a>
+        if (data.session) {
+          recoveryReady = true;
+          resetBtn.disabled = false;
+          message.textContent = "Recovery session ready. Enter your new password.";
+        } else {
+          message.textContent =
+            "Valid recovery session nahi mila. Naye recovery email ke link se is page ko open karein.";
+        }
+      } catch (error) {
+        message.textContent = "Recovery link verify nahi hua: " + error.message;
+      }
+    }
 
-    <a href="privacy.html">
-        Privacy Policy
-    </a>
+    resetForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    <a href="login.html"
-        aria-current="page">
-        Login
-    </a>
+      if (!recoveryReady) {
+        message.textContent = "Pehle valid recovery link open karein.";
+        return;
+      }
 
-</nav>
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
 
+      if (password.length < 8) {
+        message.textContent = "Password kam az kam 8 characters ka hona chahiye.";
+        return;
+      }
 
-<!-- MAIN -->
+      if (password !== confirmPassword) {
+        message.textContent = "Dono passwords match nahi karte.";
+        return;
+      }
 
-<main>
+      resetBtn.disabled = true;
+      message.textContent = "Password update ho raha hai...";
 
-    <section class="auth-container"
-        aria-labelledby="login-heading">
+      try {
+        const { error } = await supabaseClient.auth.updateUser({ password });
+        if (error) throw error;
 
-        <div class="auth-box">
+        message.textContent =
+          "Password successfully update ho gaya! Ab login page par jao.";
+        resetForm.reset();
+        recoveryReady = false;
+      } catch (error) {
+        message.textContent = "Error: " + error.message;
+      } finally {
+        resetBtn.disabled = !recoveryReady;
+      }
+    });
 
-            <h1 id="login-heading">
-                Welcome Back
-            </h1>
-
-            <p class="auth-text">
-                Login to your Global News account
-            </p>
-
-
-            <form id="loginForm">
-
-                <label for="loginEmail">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="loginEmail"
-                    name="email"
-                    placeholder="Enter your email"
-                    autocomplete="email"
-                    required>
-
-
-                <label for="loginPassword">
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    id="loginPassword"
-                    name="password"
-                    placeholder="Enter your password"
-                    autocomplete="current-password"
-                    required>
-
-
-                <button type="submit">
-                    Login
-                </button>
-
-            </form>
-
-
-            <p class="signup-text">
-
-                Don't have an account?
-
-                <a href="signup.html">
-                    Create Account
-                </a>
-
-            </p>
-
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <h3>
-        GLOBAL NEWS
-    </h3>
-
-    <p>
-        News From Around The World
-    </p>
-
-    <p>
-
-        <a href="about.html">
-            About
-        </a>
-        |
-        <a href="privacy.html">
-            Privacy Policy
-        </a>
-        |
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </p>
-
-    <p>
-        © 2026 Global News. All Rights Reserved.
-    </p>
-
-</footer>
-
-
-<!-- SUPABASE -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="script.js"></script>
-
+    checkRecoverySession();
+  </script>
 </body>
-
 </html>

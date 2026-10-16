@@ -1383,3 +1383,63 @@ main > .page-intro:last-child p {
     line-height: 1.9;
     margin-bottom: 20px;
 }
+
+/* Forgot Password Link */
+#forgotPasswordLink {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+#forgotPasswordLink:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Forgot Password Message */
+#forgotPasswordMessage {
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* Create Account Section */
+.signup-text {
+    margin-top: 22px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #6b7280;
+}
+
+/* Create Account Link */
+.signup-text a {
+    display: inline-block;
+    color: #2563eb;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-text a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .signup-text {
+        font-size: 13px;
+    }
+
+    #forgotPasswordLink {
+        font-size: 14px;
+    }
+}

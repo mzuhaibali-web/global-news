@@ -148,3 +148,44 @@ if (loginForm && supabaseClient) {
         }
     );
 }
+
+const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+const forgotPasswordMessage = document.getElementById("forgotPasswordMessage");
+
+if (forgotPasswordLink) {
+    forgotPasswordLink.addEventListener("click", async function (event) {
+        event.preventDefault();
+
+        const emailInput = document.getElementById("loginEmail");
+        const email = emailInput ? emailInput.value.trim() : "";
+
+        if (!email) {
+            forgotPasswordMessage.textContent = "Please enter your email first.";
+            emailInput.focus();
+            return;
+        }
+
+        if (typeof supabaseClient === "undefined" || !supabaseClient) {
+            forgotPasswordMessage.textContent = "Supabase is not initialized. Please refresh the page.";
+            return;
+        }
+
+        forgotPasswordLink.style.pointerEvents = "none";
+        forgotPasswordMessage.textContent = "Sending recovery email...";
+
+        try {
+            const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+                redirectTo: "https://mzuhaibali-web.github.io/global-news/reset-password.html"
+            });
+
+            if (error) throw error;
+
+            forgotPasswordMessage.textContent =
+                "If the account exists, a recovery email has been requested. Check your inbox and spam folder.";
+        } catch (error) {
+            forgotPasswordMessage.textContent = "Error: " + error.message;
+        } finally {
+            forgotPasswordLink.style.pointerEvents = "";
+        }
+    });
+}

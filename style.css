@@ -2016,3 +2016,68 @@ article.card p,
     color: #f2cc63 !important;
 }
 
+
+/* BUSINESS PAGE - NAVY AND GOLD FIX */
+.page-intro {
+    color: #bdc8d9 !important;
+}
+
+main > .page-intro h1,
+main > .page-intro h2,
+main > .page-intro h3 {
+    color: #d4af37 !important;
+}
+
+.business-card {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.business-card h2,
+.business-card h3 {
+    color: #d4af37 !important;
+}
+
+.business-card p {
+    color: #bdc8d9 !important;
+}
+
+.business-card a {
+    color: #f2cc63 !important;
+}
+
+.business-card a:hover {
+    color: #ffffff !important;
+}
+
+
+/* FORCE BUSINESS PAGE TEXT VISIBILITY */
+main,
+main p,
+main li {
+    color: #f8fafc !important;
+}
+
+main h1,
+main h2,
+main h3 {
+    color: #d4af37 !important;
+}
+
+.business-card,
+.business-card * {
+    color: #f8fafc !important;
+}
+
+.business-card h2,
+.business-card h3 {
+    color: #d4af37 !important;
+}
+
+.business-card a {
+    color: #f2cc63 !important;
+}
+

@@ -7,18 +7,201 @@
   <title>Login - Global News</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body.login-page {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f8fafc;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at top left, #26385b, transparent 50%),
+        linear-gradient(135deg, #080d19, #111b30, #080d19);
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 440px;
+      padding: 36px;
+      background: rgba(18, 28, 47, 0.97);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+    }
+
+    .brand {
+      margin-bottom: 26px;
+      text-align: center;
+    }
+
+    .brand-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 14px;
+      border-radius: 18px;
+      color: #111827;
+      background: linear-gradient(135deg, #f5dc83, #c69b2d);
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .brand h1 {
+      margin: 0 0 10px;
+      color: #f2cc63;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    .brand p {
+      margin: 0;
+      color: #bdc8d9;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    #loginForm {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #loginForm label {
+      margin-top: 8px;
+      color: #e2e8f0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    #loginForm input {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      color: #ffffff;
+      background: #0c1424;
+      border: 1px solid #34435b;
+      border-radius: 10px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    #loginForm input:focus {
+      border-color: #d4af37;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
+    }
+
+    .forgot-row {
+      margin: 8px 0 4px;
+      text-align: right;
+    }
+
+    .login-card a {
+      color: #f2cc63;
+      text-decoration: none;
+    }
+
+    .login-card a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    #loginForm button {
+      width: 100%;
+      min-height: 49px;
+      margin-top: 12px;
+      padding: 12px;
+      color: #111827;
+      background: linear-gradient(135deg, #f2d477, #c69b2d);
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, filter 0.2s;
+    }
+
+    #loginForm button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    #loginForm button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
+    }
+
+    #loginMessage {
+      display: none;
+      margin: 12px 0 0;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .login-links {
+      margin-top: 24px;
+      color: #bdc8d9;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .login-links p {
+      margin: 8px 0;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 480px) {
+      body.login-page {
+        padding: 16px;
+      }
+
+      .login-card {
+        padding: 28px 22px;
+      }
+
+      .brand h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
-<body>
-  <main class="auth-container">
-    <h1>Login to Global News</h1>
-    <p>Welcome back! Please log in to continue.</p>
+
+<body class="login-page">
+
+  <main class="login-card">
+
+    <header class="brand">
+      <div class="brand-icon" aria-hidden="true">G</div>
+      <h1>Global News</h1>
+      <p>Welcome back! Please log in to continue.</p>
+    </header>
 
     <form id="loginForm">
       <label for="email">Email Address</label>
       <input
         type="email"
         id="email"
+        name="email"
         placeholder="Enter your email"
+        autocomplete="email"
         required
       >
 
@@ -26,23 +209,33 @@
       <input
         type="password"
         id="password"
+        name="password"
         placeholder="Enter your password"
+        autocomplete="current-password"
         required
       >
 
+      <div class="forgot-row">
+        <a href="forgot-password.html">Forgot Password?</a>
+      </div>
+
       <button type="submit" id="loginBtn">Login</button>
-      <p id="message" role="status" aria-live="polite"></p>
+      <p id="loginMessage" role="status" aria-live="polite"></p>
     </form>
 
-    <p><a href="forgot-password.html">Forgot Password?</a></p>
-    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-    <p><a href="index.html">Back to Home</a></p>
+    <footer class="login-links">
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      <a class="back-home" href="index.html">← Back to Home</a>
+    </footer>
+
   </main>
 
   <script>
     const SUPABASE_URL = "https://dcliuifevgyynbdmtjhk.supabase.co";
-    const SUPABASE_KEY = "sb_publishable_vqUJWs3PUS7Qj4vYuleyFg_0c9DgsI_";
 
+    // Apni existing publishable key yahan rakho.
+    const SUPABASE_KEY =
+    "sb_publishable_vqUJWs3PUS7Qj4vYuleyFg_0c9DgsI_";
     const supabaseClient = window.supabase.createClient(
       SUPABASE_URL,
       SUPABASE_KEY
@@ -50,7 +243,16 @@
 
     const loginForm = document.getElementById("loginForm");
     const loginBtn = document.getElementById("loginBtn");
-    const message = document.getElementById("message");
+    const loginMessage = document.getElementById("loginMessage");
+
+    function showMessage(text, success = false) {
+      loginMessage.style.display = "block";
+      loginMessage.textContent = text;
+      loginMessage.style.color = success ? "#86efac" : "#fca5a5";
+      loginMessage.style.background = success
+        ? "rgba(22, 163, 74, 0.12)"
+        : "rgba(220, 38, 38, 0.12)";
+    }
 
     loginForm.addEventListener("submit", async function (event) {
       event.preventDefault();
@@ -59,26 +261,33 @@
       const password = document.getElementById("password").value;
 
       loginBtn.disabled = true;
-      message.textContent = "Logging in...";
+      loginBtn.textContent = "Logging in...";
+      loginMessage.style.display = "none";
 
       try {
-        const { data, error } =
-          await supabaseClient.auth.signInWithPassword({
-            email,
-            password
-          });
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
+          email: email,
+          password: password
+        });
 
-        if (error) throw error;
+        if (error) {
+          showMessage(error.message);
+          return;
+        }
 
-        message.textContent = "Login successful! Opening homepage...";
+        if (data.session) {
+          showMessage("Login successful! Opening Global News...", true);
 
-        window.location.href = "index.html";
+          window.location.href = "index.html";
+        }
       } catch (error) {
-        message.textContent = "Login failed: " + error.message;
+        showMessage("Connection error. Please try again.");
       } finally {
         loginBtn.disabled = false;
+        loginBtn.textContent = "Login";
       }
     });
   </script>
+
 </body>
 </html>

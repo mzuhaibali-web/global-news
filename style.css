@@ -1443,3 +1443,127 @@ main > .page-intro:last-child p {
         font-size: 14px;
     }
 }
+
+/* ===== GLOBAL NEWS LOGIN DESIGN ===== */
+
+body:has(#loginForm) {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at top left, #24365a 0%, transparent 45%),
+    linear-gradient(135deg, #080d19, #111b30 55%, #080d19);
+  color: #f8fafc;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body:has(#loginForm) .auth-container {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  padding: 38px 32px;
+  background: rgba(18, 28, 47, 0.96);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+}
+
+body:has(#loginForm) .auth-container h1 {
+  margin: 0 0 12px;
+  color: #f2cc63;
+  font-size: 30px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+body:has(#loginForm) .auth-container > p {
+  color: #bdc8d9;
+  text-align: center;
+  line-height: 1.6;
+}
+
+body:has(#loginForm) #loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+body:has(#loginForm) #loginForm label {
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body:has(#loginForm) #loginForm input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: #0c1424;
+  border: 1px solid #34435b;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+body:has(#loginForm) #loginForm input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
+}
+
+body:has(#loginForm) #loginForm button {
+  min-height: 49px;
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f2d477, #c69b2d);
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+body:has(#loginForm) #loginForm button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+body:has(#loginForm) .auth-container a {
+  color: #f2cc63;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+body:has(#loginForm) .auth-container a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+body:has(#loginForm) .auth-container > p:last-child {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  body:has(#loginForm) {
+    padding: 16px;
+  }
+
+  body:has(#loginForm) .auth-container {
+    padding: 30px 22px;
+    border-radius: 18px;
+  }
+
+  body:has(#loginForm) .auth-container h1 {
+    font-size: 26px;
+  }
+}

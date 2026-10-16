@@ -1567,3 +1567,452 @@ body:has(#loginForm) .auth-container > p:last-child {
     font-size: 26px;
   }
 }
+
+/* ===== GLOBAL NEWS: DARK NAVY + GOLD THEME ===== */
+
+:root {
+    --gn-bg: #080d19;
+    --gn-card: #121c2f;
+    --gn-gold: #d4af37;
+    --gn-gold-light: #f2cc63;
+    --gn-text: #f8fafc;
+    --gn-muted: #bdc8d9;
+    --gn-border: #34435b;
+}
+
+body {
+    background: var(--gn-bg);
+    color: var(--gn-text);
+}
+
+header {
+    background: var(--gn-card);
+    color: var(--gn-text);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.logo,
+header h1,
+h1,
+h2 {
+    color: var(--gn-gold-light);
+}
+
+header p {
+    color: var(--gn-muted);
+}
+
+nav {
+    background: #0c1424;
+    border-bottom: 1px solid var(--gn-border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+nav a {
+    color: var(--gn-text);
+    transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--gn-gold-light);
+}
+
+main,
+section {
+    color: var(--gn-text);
+}
+
+article,
+.card,
+.property-card,
+.news-card,
+form,
+.auth-container,
+.contact-container {
+    background: var(--gn-card);
+    color: var(--gn-text);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 14px;
+}
+
+p,
+label {
+    color: inherit;
+}
+
+input,
+textarea,
+select {
+    background: #0c1424;
+    color: var(--gn-text);
+    border: 1px solid var(--gn-border);
+    border-radius: 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid rgba(212, 175, 55, 0.45);
+    border-color: var(--gn-gold);
+}
+
+button,
+.btn {
+    background: var(--gn-gold);
+    color: #111827;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--gn-gold-light);
+}
+
+a {
+    color: var(--gn-gold-light);
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+footer {
+    background: #0c1424;
+    color: var(--gn-muted);
+    border-top: 1px solid var(--gn-border);
+}
+
+
+/* ===== FIX: HEADING AND NAVBAR TEXT VISIBILITY ===== */
+header h1,
+header h2,
+.logo,
+h1 {
+    color: #f2cc63 !important;
+}
+
+nav a,
+nav a:visited {
+    color: #f8fafc !important;
+}
+
+nav a:hover,
+nav a.active {
+    color: #f2cc63 !important;
+}
+
+
+/* ===== CONTACT FORM SPACING FIX ===== */
+form label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+form input,
+form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 12px;
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* ===== CONTACT CARD SPACING FIX ===== */
+.contact-container {
+    width: calc(100% - 32px);
+    max-width: 600px;
+    margin: 30px auto !important;
+    padding: 24px !important;
+}
+
+.contact-container form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-container label {
+    display: block;
+    margin: 16px 0 8px;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    display: block;
+    margin-bottom: 16px;
+}
+
+
+/* ===== CONTACT PAGE: CLEAN NAVY + GOLD DESIGN ===== */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    width: calc(100% - 32px);
+    max-width: 1000px;
+    margin: 30px auto !important;
+    padding: 28px !important;
+    background: #121c2f !important;
+    border: 1px solid #34435b !important;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.contact-info,
+.contact-form {
+    min-width: 0;
+    width: 100%;
+    padding: 28px !important;
+    background: #0c1424 !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: #f2cc63 !important;
+    margin: 0 0 20px;
+    line-height: 1.3;
+}
+
+.contact-info p,
+.contact-form p {
+    color: #e2e8f0 !important;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    margin-bottom: 18px;
+}
+
+.contact-form form {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    color: #f8fafc;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+.contact-form label {
+    display: block;
+    color: #f8fafc;
+    margin: 14px 0 8px;
+    line-height: 1.5;
+}
+
+.contact-form input:not([type="hidden"]),
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 16px;
+    padding: 12px 14px;
+    background: #080d19;
+    color: #f8fafc;
+    border: 1px solid #526078;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 4px;
+    background: #d4af37;
+    color: #111827;
+    border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+    .contact-container {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 16px !important;
+        gap: 18px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 20px !important;
+    }
+}
+
+
+/* ===== ABOUT PAGE: NAVY + GOLD BOX ===== */
+.about-container,
+.about-box,
+.about-content,
+.about-section,
+.about-card {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b;
+    border-radius: 16px;
+}
+
+.about-container h1,
+.about-container h2,
+.about-box h1,
+.about-box h2,
+.about-content h1,
+.about-content h2,
+.about-section h1,
+.about-section h2,
+.about-card h1,
+.about-card h2 {
+    color: #f2cc63 !important;
+}
+
+.about-container p,
+.about-box p,
+.about-content p,
+.about-section p,
+.about-card p {
+    color: #e2e8f0 !important;
+}
+
+
+/* ===== ABOUT PAGE ARTICLE BOX FIX ===== */
+.news-article {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b !important;
+    border-radius: 16px;
+    padding: 28px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.news-article h1,
+.news-article h2,
+.news-article h3 {
+    color: #f2cc63 !important;
+}
+
+.news-article p,
+.news-article li,
+.news-article .article-text {
+    color: #e2e8f0 !important;
+}
+
+.news-article .article-category {
+    color: #f2cc63 !important;
+}
+
+
+/* ===== HOME PAGE: NAVY + GOLD CARDS ===== */
+.news-card,
+.news-grid .card,
+article.card,
+.news-item,
+.featured-news,
+.latest-news article {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b !important;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.news-card h1,
+.news-card h2,
+.news-card h3,
+.news-grid .card h1,
+.news-grid .card h2,
+.news-grid .card h3,
+article.card h2,
+article.card h3,
+.news-item h2,
+.news-item h3,
+.featured-news h2,
+.latest-news article h2 {
+    color: #f2cc63 !important;
+}
+
+.news-card p,
+.news-grid .card p,
+article.card p,
+.news-item p,
+.featured-news p,
+.latest-news article p {
+    color: #e2e8f0 !important;
+}
+
+
+/* ===== HOME PAGE CARDS: DARK NAVY + GOLD ===== */
+.featured {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b !important;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.featured-content {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    padding: 24px;
+}
+
+.news-container .news-card {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b !important;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.news-card .news-content {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    padding: 20px;
+}
+
+.featured h1,
+.featured h2,
+.featured h3,
+.news-card h1,
+.news-card h2,
+.news-card h3,
+.section-title {
+    color: #f2cc63 !important;
+}
+
+.featured p,
+.news-card p,
+.featured-content p,
+.news-content p {
+    color: #e2e8f0 !important;
+}
+
+.country-grid > * {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b !important;
+    border-radius: 14px;
+}
+
+.country-grid h2,
+.country-grid h3,
+.country-grid h4 {
+    color: #f2cc63 !important;
+}
+

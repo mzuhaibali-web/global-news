@@ -1,31 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reset Password - Global News</title>
+  <title>Login - Global News</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <main class="auth-container">
-    <h1>Reset Your Password</h1>
-    <p>Enter your new password below.</p>
+    <h1>Login to Global News</h1>
+    <p>Welcome back! Please log in to continue.</p>
 
-    <form id="resetForm">
-      <label for="password">New Password</label>
-      <input type="password" id="password" minlength="8"
-        placeholder="Enter new password" required>
+    <form id="loginForm">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      >
 
-      <label for="confirmPassword">Confirm Password</label>
-      <input type="password" id="confirmPassword" minlength="8"
-        placeholder="Confirm new password" required>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      >
 
-      <button type="submit" id="resetBtn" disabled>Update Password</button>
-      <p id="message" role="status" aria-live="polite">Checking recovery link...</p>
+      <button type="submit" id="loginBtn">Login</button>
+      <p id="message" role="status" aria-live="polite"></p>
     </form>
 
-    <p><a href="login.html">Back to Login</a></p>
+    <p><a href="forgot-password.html">Forgot Password?</a></p>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    <p><a href="index.html">Back to Home</a></p>
   </main>
 
   <script>
@@ -37,100 +48,37 @@
       SUPABASE_KEY
     );
 
-    const resetForm = document.getElementById("resetForm");
+    const loginForm = document.getElementById("loginForm");
+    const loginBtn = document.getElementById("loginBtn");
     const message = document.getElementById("message");
-    const resetBtn = document.getElementById("resetBtn");
 
-    let recoveryReady = false;
-
-    supabaseClient.auth.onAuthStateChange((event, session) => {
-      if (event === "PASSWORD_RECOVERY" && session) {
-        recoveryReady = true;
-        resetBtn.disabled = false;
-        message.textContent = "Recovery link verified. Enter your new password.";
-      }
-    });
-
-    async function checkRecoverySession() {
-      try {
-        const params = new URLSearchParams(window.location.hash.slice(1));
-        const query = new URLSearchParams(window.location.search);
-
-        const tokenHash = query.get("token_hash");
-        const type = query.get("type") || params.get("type");
-        const accessToken = params.get("access_token");
-        const refreshToken = params.get("refresh_token");
-
-        if (tokenHash && type === "recovery") {
-          const { error } = await supabaseClient.auth.verifyOtp({
-            token_hash: tokenHash,
-            type: "recovery"
-          });
-          if (error) throw error;
-        } else if (accessToken && refreshToken && type === "recovery") {
-          const { error } = await supabaseClient.auth.setSession({
-            access_token: accessToken,
-            refresh_token: refreshToken
-          });
-          if (error) throw error;
-        }
-
-        const { data, error } = await supabaseClient.auth.getSession();
-        if (error) throw error;
-
-        if (data.session) {
-          recoveryReady = true;
-          resetBtn.disabled = false;
-          message.textContent = "Recovery session ready. Enter your new password.";
-        } else {
-          message.textContent =
-            "Valid recovery session nahi mila. Naye recovery email ke link se is page ko open karein.";
-        }
-      } catch (error) {
-        message.textContent = "Recovery link verify nahi hua: " + error.message;
-      }
-    }
-
-    resetForm.addEventListener("submit", async function (event) {
+    loginForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
-      if (!recoveryReady) {
-        message.textContent = "Pehle valid recovery link open karein.";
-        return;
-      }
-
+      const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
 
-      if (password.length < 8) {
-        message.textContent = "Password kam az kam 8 characters ka hona chahiye.";
-        return;
-      }
-
-      if (password !== confirmPassword) {
-        message.textContent = "Dono passwords match nahi karte.";
-        return;
-      }
-
-      resetBtn.disabled = true;
-      message.textContent = "Password update ho raha hai...";
+      loginBtn.disabled = true;
+      message.textContent = "Logging in...";
 
       try {
-        const { error } = await supabaseClient.auth.updateUser({ password });
+        const { data, error } =
+          await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+          });
+
         if (error) throw error;
 
-        message.textContent =
-          "Password successfully update ho gaya! Ab login page par jao.";
-        resetForm.reset();
-        recoveryReady = false;
+        message.textContent = "Login successful! Opening homepage...";
+
+        window.location.href = "index.html";
       } catch (error) {
-        message.textContent = "Error: " + error.message;
+        message.textContent = "Login failed: " + error.message;
       } finally {
-        resetBtn.disabled = !recoveryReady;
+        loginBtn.disabled = false;
       }
     });
-
-    checkRecoverySession();
   </script>
 </body>
 </html>

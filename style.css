@@ -2081,3 +2081,87 @@ main h3 {
     color: #f2cc63 !important;
 }
 
+```css
+/* Global News Theme - Article Color Update */
+
+body {
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+header {
+    background: #111827;
+    color: #ffffff;
+    border-bottom: 4px solid #d4af37;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+nav {
+    background: #111827;
+}
+
+nav a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+article {
+    background: #ffffff;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 5px 20px rgba(17, 24, 39, 0.07);
+}
+
+h1,
+h2 {
+    color: #111827;
+}
+
+.category {
+    background: #d4af37;
+    color: #111827;
+}
+
+.intro {
+    color: #374151;
+    border-left-color: #d4af37;
+}
+
+.breadcrumb a,
+.sources a {
+    color: #b8860b;
+}
+
+.sources {
+    background: #f9fafb;
+    border-color: #e5e7eb;
+}
+
+.more-news {
+    background: #111827;
+    color: #ffffff;
+    border: 1px solid #111827;
+    transition: 0.3s ease;
+}
+
+.more-news:hover {
+    background: #d4af37;
+    color: #111827;
+}
+
+footer {
+    background: #111827;
+    color: #d1d5db;
+    border-top: 3px solid #d4af37;
+}
+
+footer a {
+    color: #d4af37;
+}

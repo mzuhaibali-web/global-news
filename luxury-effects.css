@@ -1,0 +1,202 @@
+﻿/* GLOBAL NEWS — LUXURY GLASS EFFECTS
+   Separate enhancement layer; existing styles remain untouched. */
+
+:root {
+    --luxury-gold: #e2bd62;
+    --luxury-gold-soft: rgba(226, 189, 98, 0.18);
+    --luxury-glass: rgba(20, 32, 51, 0.76);
+    --luxury-glass-border: rgba(226, 189, 98, 0.18);
+    --luxury-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
+}
+
+/* Smooth page navigation */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    background-image:
+        radial-gradient(ellipse at 12% 0%, rgba(53, 78, 112, 0.20), transparent 42%),
+        radial-gradient(ellipse at 90% 35%, rgba(226, 189, 98, 0.055), transparent 35%);
+}
+
+/* Premium header and navigation */
+header {
+    position: relative;
+    isolation: isolate;
+}
+
+nav {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-color: var(--luxury-glass-border) !important;
+}
+
+nav a {
+    position: relative;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--luxury-gold) !important;
+    text-shadow: 0 0 16px var(--luxury-gold-soft);
+}
+
+/* Breaking-news strip */
+.breaking {
+    border-color: var(--luxury-glass-border);
+}
+
+/* Featured story */
+.featured {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid var(--luxury-glass-border);
+    border-radius: 18px;
+    box-shadow: var(--luxury-shadow);
+}
+
+.featured img {
+    transition: transform 0.8s cubic-bezier(.2, .7, .2, 1), filter 0.5s ease;
+}
+
+.featured:hover img {
+    transform: scale(1.025);
+    filter: saturate(1.06);
+}
+
+.featured-content {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* News and country cards */
+.news-card,
+.country-grid > * {
+    position: relative;
+    overflow: hidden;
+    background: var(--luxury-glass) !important;
+    border: 1px solid var(--luxury-glass-border) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.news-card::before,
+.country-grid > *::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.045),
+        transparent 48%
+    );
+    opacity: 0.8;
+}
+
+.news-card:hover,
+.country-grid > *:hover {
+    transform: translateY(-5px);
+    border-color: rgba(226, 189, 98, 0.52) !important;
+    box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.24),
+        0 0 22px rgba(226, 189, 98, 0.08);
+}
+
+.news-card img,
+.country-grid img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.news-card:hover img,
+.country-grid > *:hover img {
+    transform: scale(1.035);
+    filter: brightness(1.06);
+}
+
+/* Elegant buttons */
+button,
+input[type="submit"],
+.more-news {
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        filter 0.22s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.more-news:hover {
+    box-shadow: 0 7px 22px rgba(226, 189, 98, 0.22);
+    filter: brightness(1.04);
+}
+
+/* Forms and input fields */
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    border-color: var(--luxury-gold) !important;
+    box-shadow: 0 0 0 3px var(--luxury-gold-soft);
+    outline: none;
+}
+
+/* Accessible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline-offset: 3px;
+}
+
+/* Small-screen adjustments */
+@media (max-width: 700px) {
+    .featured,
+    .news-card,
+    .country-grid > * {
+        border-radius: 12px;
+    }
+
+    .news-card:hover,
+    .country-grid > *:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Respect the visitor's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .featured:hover img,
+    .news-card:hover img,
+    .country-grid > *:hover img {
+        transform: none !important;
+    }
+}

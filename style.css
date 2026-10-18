@@ -2622,3 +2622,166 @@ body > footer {
 }
 /* ===== End Article Theme ===== */
 
+
+/* ===== ARTICLE PAGE: MATCH COUNTRIES DARK THEME ===== */
+
+body {
+    background: #f4f6f8 !important;
+    color: #f8fafc !important;
+    font-family: Arial, sans-serif;
+}
+
+body > header {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border-bottom: 1px solid #34435b;
+}
+
+body > header .logo span {
+    color: #f2cc63 !important;
+}
+
+body > header p,
+body > header .tagline {
+    color: #bdc8d9 !important;
+}
+
+body > nav {
+    background: #121c2f !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+body > nav a {
+    color: #f8fafc !important;
+}
+
+body > nav a:hover {
+    color: #f2cc63 !important;
+}
+
+body > .breaking {
+    background: #dc2626;
+    color: white;
+}
+
+main.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 20px;
+    background: transparent !important;
+}
+
+main.container > .breadcrumb {
+    color: #6b7280 !important;
+    margin-bottom: 20px;
+}
+
+main.container > .breadcrumb a {
+    color: #2563eb !important;
+}
+
+main.container article {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b !important;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10) !important;
+    padding: 30px;
+    overflow-wrap: anywhere;
+}
+
+main.container article h1,
+main.container article h2,
+main.container article h3 {
+    color: #f2cc63 !important;
+    text-align: left;
+    line-height: 1.5;
+}
+
+main.container article p,
+main.container article li,
+main.container article div {
+    color: #f8fafc;
+    line-height: 1.8;
+}
+
+main.container article .category {
+    display: inline-block;
+    color: #f2cc63 !important;
+    background: transparent !important;
+    padding: 0;
+}
+
+main.container article .article-meta,
+main.container article .image-caption,
+main.container article .editor-note {
+    color: #bdc8d9 !important;
+}
+
+main.container article .intro {
+    color: #f8fafc !important;
+    background: transparent !important;
+    border-left: 4px solid #f2cc63;
+    padding-left: 16px;
+}
+
+main.container article .sources {
+    background: #1a2940 !important;
+    border: 1px solid #34435b !important;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+main.container article a {
+    color: #f2cc63 !important;
+}
+
+main.container article img.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+main.container article .more-news {
+    display: inline-block;
+    background: #f2cc63 !important;
+    color: #121c2f !important;
+    padding: 11px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body > footer {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border-top: 1px solid #34435b;
+}
+
+body > footer a {
+    color: #f2cc63 !important;
+}
+
+@media (max-width: 600px) {
+    main.container {
+        padding: 22px 12px;
+    }
+
+    main.container article {
+        padding: 20px 16px;
+    }
+
+    main.container article h1 {
+        font-size: 26px;
+    }
+
+    main.container article img.hero-image {
+        height: 230px;
+    }
+}
+
+/* ===== END COUNTRIES-MATCHED ARTICLE THEME ===== */
+

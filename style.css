@@ -2312,3 +2312,96 @@ footer a {
 
 /* ===== End Article Design ===== */
 
+
+/* ===== Article Layout Fix ===== */
+
+.container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px;
+    min-width: 0;
+}
+
+article {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 30px;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+}
+
+article h1 {
+    font-size: clamp(25px, 4vw, 36px);
+    line-height: 1.35;
+    margin: 12px 0 16px;
+    overflow-wrap: anywhere;
+}
+
+article h2 {
+    font-size: 23px;
+    line-height: 1.45;
+    margin: 28px 0 12px;
+}
+
+article p {
+    line-height: 1.85;
+    margin: 0 0 18px;
+    overflow-wrap: anywhere;
+}
+
+article img,
+article .hero-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin: 20px 0 10px;
+}
+
+article a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+article .intro {
+    padding-left: 16px;
+    line-height: 1.85;
+}
+
+article .sources {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 12px;
+        margin: 18px auto;
+    }
+
+    article {
+        padding: 18px 15px;
+    }
+
+    article h1 {
+        font-size: 26px;
+    }
+
+    article h2 {
+        font-size: 21px;
+    }
+
+    article img,
+    article .hero-image {
+        max-height: 240px;
+    }
+}
+
+/* ===== End Article Layout Fix ===== */
+

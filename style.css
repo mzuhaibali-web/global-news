@@ -2785,3 +2785,35 @@ body > footer a {
 
 /* ===== END COUNTRIES-MATCHED ARTICLE THEME ===== */
 
+
+/* FORCE NAVY BLUE BACKGROUND ON ARTICLE PAGE */
+html:has(main.container),
+body:has(main.container) {
+    background: #121c2f !important;
+    background-color: #121c2f !important;
+}
+
+body:has(main.container) main.container {
+    background: #121c2f !important;
+}
+
+body:has(main.container) article {
+    background: #121c2f !important;
+    color: #f8fafc !important;
+    border: 1px solid #34435b !important;
+    box-shadow: none !important;
+}
+
+body:has(main.container) article h1,
+body:has(main.container) article h2,
+body:has(main.container) article h3 {
+    color: #f2cc63 !important;
+}
+
+body:has(main.container) article p,
+body:has(main.container) article li {
+    color: #f8fafc !important;
+}
+
+/* END NAVY BACKGROUND FIX */
+

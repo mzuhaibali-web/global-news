@@ -2405,3 +2405,50 @@ article .sources {
 
 /* ===== End Article Layout Fix ===== */
 
+
+/* ===== Match Article Colors With Home Page ===== */
+body {
+    background: #ffffff;
+    color: #111827;
+}
+
+main.container,
+.container {
+    background: transparent;
+    color: inherit;
+}
+
+article {
+    background: transparent;
+    color: inherit;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+article h1,
+article h2,
+article h3,
+article p,
+article li {
+    color: inherit;
+}
+
+article .breadcrumb,
+article .article-meta,
+article .image-caption,
+article .editor-note {
+    color: inherit;
+}
+
+article .intro,
+article .sources {
+    background: transparent;
+    color: inherit;
+}
+
+article .breadcrumb a,
+article .sources a {
+    color: inherit;
+}
+/* ===== End Home Page Color Match ===== */
+

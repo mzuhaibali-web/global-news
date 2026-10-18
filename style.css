@@ -2493,3 +2493,132 @@ article .sources {
 }
 /* ===== End Color Match ===== */
 
+
+/* ===== Global News Article: Match Home Theme ===== */
+body {
+    background: #f4f6f8 !important;
+    color: #111827 !important;
+    font-family: Arial, sans-serif;
+}
+
+body > header {
+    background: #111827 !important;
+    color: white !important;
+}
+
+body > nav {
+    background: white !important;
+}
+
+body > nav a {
+    color: #111827 !important;
+}
+
+body > nav a:hover {
+    color: #2563eb !important;
+}
+
+main.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 20px;
+    background: transparent !important;
+    color: #111827 !important;
+}
+
+article {
+    background: white !important;
+    color: #111827 !important;
+    padding: 30px;
+    border: none !important;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10) !important;
+    overflow-wrap: break-word;
+}
+
+article h1 {
+    color: #111827 !important;
+    text-align: left;
+    font-size: 32px;
+    line-height: 1.4;
+    margin: 18px 0;
+}
+
+article h2,
+article h3,
+article p,
+article li {
+    color: #111827;
+}
+
+article p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+article .category {
+    color: #2563eb !important;
+    background: transparent !important;
+    padding: 0;
+}
+
+article .breadcrumb,
+article .article-meta,
+article .image-caption,
+article .editor-note {
+    color: #6b7280 !important;
+}
+
+article .breadcrumb a,
+article .sources a {
+    color: #2563eb !important;
+}
+
+article img.hero-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 20px 0 10px;
+}
+
+article .intro {
+    border-left: 4px solid #2563eb;
+    padding-left: 16px;
+    background: transparent !important;
+}
+
+article .sources {
+    background: #f4f6f8 !important;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+body > footer {
+    background: #111827 !important;
+    color: white !important;
+}
+
+@media (max-width: 600px) {
+    main.container {
+        padding: 20px 12px;
+    }
+
+    article {
+        padding: 20px 16px;
+    }
+
+    article h1 {
+        font-size: 26px;
+    }
+
+    article img.hero-image {
+        height: 230px;
+    }
+}
+/* ===== End Article Theme ===== */
+

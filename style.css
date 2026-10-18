@@ -2452,3 +2452,44 @@ article .sources a {
 }
 /* ===== End Home Page Color Match ===== */
 
+
+/* ===== Final Home Page Color Match ===== */
+body {
+    background: #f4f6f8 !important;
+    color: #111827 !important;
+}
+
+main.container,
+.container {
+    background: transparent !important;
+    color: #111827 !important;
+}
+
+article {
+    background: transparent !important;
+    color: #111827 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+article h1,
+article h2,
+article h3,
+article p,
+article li,
+article div {
+    color: #111827;
+}
+
+article .breadcrumb,
+article .article-meta,
+article .image-caption,
+article .editor-note {
+    color: #6b7280;
+}
+
+article .sources {
+    background: transparent !important;
+}
+/* ===== End Color Match ===== */
+

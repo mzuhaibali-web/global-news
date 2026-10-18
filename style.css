@@ -2165,3 +2165,150 @@ footer {
 footer a {
     color: #d4af37;
 }
+
+/* ===== Global News Article Design ===== */
+
+body {
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+header {
+    background: #111827;
+    color: #ffffff;
+    border-bottom: 4px solid #d4af37;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+nav {
+    background: #111827;
+}
+
+nav a {
+    color: #ffffff;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+article {
+    background: #ffffff;
+    color: #374151;
+    padding: 35px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(17, 24, 39, 0.07);
+}
+
+h1, h2 {
+    color: #111827;
+    line-height: 1.4;
+}
+
+.category {
+    display: inline-block;
+    background: #d4af37;
+    color: #111827;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.breadcrumb {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a,
+.sources a {
+    color: #b8860b;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px 0 8px;
+}
+
+.image-caption,
+.article-meta,
+.editor-note {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.intro {
+    color: #374151;
+    border-left: 4px solid #d4af37;
+    padding-left: 18px;
+    margin: 25px 0;
+}
+
+.sources {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.more-news {
+    display: inline-block;
+    background: #111827;
+    color: #ffffff;
+    padding: 11px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.more-news:hover {
+    background: #d4af37;
+    color: #111827;
+}
+
+footer {
+    background: #111827;
+    color: #d1d5db;
+    border-top: 3px solid #d4af37;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+footer a {
+    color: #d4af37;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    article {
+        padding: 20px 16px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .hero-image {
+        max-height: 300px;
+    }
+}
+
+/* ===== End Article Design ===== */
+

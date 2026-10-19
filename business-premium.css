@@ -1,0 +1,400 @@
+﻿/* Global News — Premium Business Page
+   Dedicated styles only; shared CSS remains untouched. */
+
+body:has(.business-grid) {
+    --bp-bg: #080e1b;
+    --bp-panel: #111c30;
+    --bp-panel-light: #17253c;
+    --bp-gold: #e5c16b;
+    --bp-gold-bright: #f6d98a;
+    --bp-text: #f4f6fb;
+    --bp-muted: #b9c5d8;
+    --bp-border: rgba(229, 193, 107, 0.23);
+
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(48, 67, 103, .32), transparent 48%),
+        var(--bp-bg) !important;
+    color: var(--bp-text) !important;
+}
+
+body:has(.business-grid) > header {
+    background: rgba(8, 14, 27, .97) !important;
+    border-bottom: 1px solid var(--bp-border) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .22);
+}
+
+body:has(.business-grid) > nav {
+    background: rgba(13, 22, 39, .97) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+body:has(.business-grid) > nav a {
+    transition: color .25s ease, background .25s ease;
+}
+
+body:has(.business-grid) > nav a:hover,
+body:has(.business-grid) > nav a:focus-visible {
+    color: var(--bp-gold-bright) !important;
+}
+
+body:has(.business-grid) main {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding-top: 36px;
+    padding-bottom: 60px;
+    color: var(--bp-text) !important;
+}
+
+body:has(.business-grid) .page-intro {
+    position: relative;
+    margin: 0 0 30px;
+    padding: clamp(24px, 4vw, 42px);
+    overflow: hidden;
+    border: 1px solid var(--bp-border) !important;
+    border-radius: 20px;
+    background:
+        linear-gradient(135deg, rgba(25, 39, 62, .96), rgba(12, 21, 37, .97)) !important;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .20);
+    color: var(--bp-muted) !important;
+}
+
+body:has(.business-grid) .page-intro h1,
+body:has(.business-grid) .page-intro h2,
+body:has(.business-grid) .page-intro h3 {
+    color: var(--bp-gold-bright) !important;
+    line-height: 1.3;
+    letter-spacing: -.025em;
+}
+
+body:has(.business-grid) .page-intro p,
+body:has(.business-grid) .page-intro li {
+    color: var(--bp-muted) !important;
+    line-height: 1.85;
+}
+
+body:has(.business-grid) .business-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+    margin: 28px 0 38px;
+}
+
+body:has(.business-grid) .business-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--bp-border) !important;
+    border-radius: 17px !important;
+    background: linear-gradient(160deg, var(--bp-panel-light), var(--bp-panel)) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .22);
+    color: var(--bp-text) !important;
+    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+
+body:has(.business-grid) .business-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(229, 193, 107, .65) !important;
+    box-shadow: 0 20px 42px rgba(0, 0, 0, .34);
+}
+
+body:has(.business-grid) .business-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform .45s ease, filter .45s ease;
+}
+
+body:has(.business-grid) .business-card:hover img {
+    transform: scale(1.035);
+    filter: saturate(1.08);
+}
+
+body:has(.business-grid) .business-card h1,
+body:has(.business-grid) .business-card h2,
+body:has(.business-grid) .business-card h3,
+body:has(.business-grid) .business-card h4 {
+    color: var(--bp-gold-bright) !important;
+    line-height: 1.4;
+}
+
+body:has(.business-grid) .business-card p,
+body:has(.business-grid) .business-card li {
+    color: var(--bp-muted) !important;
+    line-height: 1.8;
+}
+
+body:has(.business-grid) .business-card a {
+    color: var(--bp-gold-bright) !important;
+    text-decoration-color: rgba(246, 217, 138, .45);
+    text-underline-offset: 4px;
+}
+
+body:has(.business-grid) .business-card a:hover {
+    color: #fff2c8 !important;
+    text-decoration-color: currentColor;
+}
+
+body:has(.business-grid) main a:focus-visible {
+    outline: 2px solid var(--bp-gold-bright);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+body:has(.business-grid) > footer {
+    background: #080e1b !important;
+    border-top: 1px solid var(--bp-border) !important;
+    color: var(--bp-muted) !important;
+}
+
+body:has(.business-grid) > footer a {
+    color: var(--bp-gold-bright) !important;
+}
+
+@media (max-width: 900px) {
+    body:has(.business-grid) .business-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    body:has(.business-grid) main {
+        width: calc(100% - 24px);
+        padding-top: 22px;
+        padding-bottom: 36px;
+    }
+
+    body:has(.business-grid) .business-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+        margin: 20px 0 28px;
+    }
+
+    body:has(.business-grid) .page-intro {
+        padding: 23px 19px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+
+    body:has(.business-grid) .business-card {
+        border-radius: 14px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(.business-grid) .business-card,
+    body:has(.business-grid) .business-card img,
+    body:has(.business-grid) > nav a {
+        transition: none !important;
+    }
+
+    body:has(.business-grid) .business-card:hover,
+    body:has(.business-grid) .business-card:hover img {
+        transform: none !important;
+    }
+}
+
+
+/* BUSINESS PREMIUM REFINEMENTS - APPROVED */
+
+/* More refined spacing and typography */
+body:has(.business-grid) main {
+    max-width: 1240px;
+    padding: clamp(20px, 3.5vw, 44px) clamp(16px, 3vw, 32px);
+}
+
+body:has(.business-grid) .page-intro {
+    padding: clamp(24px, 4vw, 42px);
+    margin-block: 0 28px;
+    border-radius: 22px;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(229, 193, 107, 0.09),
+            transparent 42%
+        ),
+        linear-gradient(145deg, #111c30, #0b1323);
+}
+
+body:has(.business-grid) .page-intro h1,
+body:has(.business-grid) .page-intro h2,
+body:has(.business-grid) .page-intro h3 {
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+}
+
+body:has(.business-grid) .page-intro p {
+    max-width: 75ch;
+    line-height: 1.8;
+    color: #c5cede;
+}
+
+body:has(.business-grid) .business-grid {
+    align-items: stretch;
+    gap: clamp(18px, 2.4vw, 28px);
+    margin-block: 24px 40px;
+}
+
+body:has(.business-grid) .business-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(155deg, #17253c, #0e1728 78%);
+    border-color: rgba(229, 193, 107, 0.22);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+body:has(.business-grid) .business-card h2,
+body:has(.business-grid) .business-card h3 {
+    line-height: 1.3;
+    text-wrap: balance;
+}
+
+body:has(.business-grid) .business-card p {
+    line-height: 1.75;
+    color: #c5cede;
+}
+
+body:has(.business-grid) .business-card a {
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+body:has(.business-grid) .business-card:focus-within {
+    outline: 2px solid #f6d98a;
+    outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body:has(.business-grid) .business-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(246, 217, 138, 0.65);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+    }
+}
+
+@media (max-width: 600px) {
+    body:has(.business-grid) main {
+        padding: 20px 14px;
+    }
+
+    body:has(.business-grid) .page-intro {
+        padding: 22px 18px;
+        margin-bottom: 20px;
+        border-radius: 17px;
+    }
+
+    body:has(.business-grid) .business-grid {
+        gap: 16px;
+        margin-block: 18px 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(.business-grid) .business-card {
+        transition: none;
+    }
+}
+
+/* Business page: balanced section layouts */
+body:has(.business-grid) main > .page-intro {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 30px 0;
+    padding: clamp(24px, 3vw, 38px);
+}
+
+body:has(.business-grid) #economy-heading,
+body:has(.business-grid) #research-heading,
+body:has(.business-grid) #related-heading {
+    margin-bottom: 18px;
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    line-height: 1.3;
+}
+
+body:has(.business-grid) #economy-heading ~ h3 {
+    margin-top: 26px;
+    margin-bottom: 8px;
+    font-size: 1.12rem;
+}
+
+body:has(.business-grid) #economy-heading ~ p,
+body:has(.business-grid) #research-heading ~ p,
+body:has(.business-grid) #related-heading ~ p {
+    max-width: 78ch;
+}
+
+body:has(.business-grid) #research-heading ~ .business-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 210px;
+    box-sizing: border-box;
+    padding: 24px;
+    margin: 20px 0 0;
+}
+
+body:has(.business-grid) #research-heading ~ .business-card h3 {
+    margin: 0 0 12px;
+}
+
+body:has(.business-grid) #research-heading ~ .business-card p {
+    margin: 0 0 18px;
+}
+
+body:has(.business-grid) #research-heading ~ .business-card a {
+    margin-top: auto;
+}
+
+body:has(.business-grid) #related-heading ~ p {
+    margin: 12px 0;
+}
+
+@media (max-width: 600px) {
+    body:has(.business-grid) main > .page-intro {
+        margin: 22px 0;
+        padding: 22px 18px;
+    }
+
+    body:has(.business-grid) #research-heading ~ .business-card {
+        min-height: 0;
+        padding: 21px;
+    }
+}
+
+/* Business page: center text consistently */
+body:has(.business-grid) main > .page-intro {
+    text-align: center;
+}
+
+body:has(.business-grid) main > .page-intro h2,
+body:has(.business-grid) main > .page-intro h3,
+body:has(.business-grid) main > .page-intro p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body:has(.business-grid) main > .page-intro p {
+    max-width: 78ch;
+}
+
+body:has(.business-grid) #research-heading ~ .business-card {
+    align-items: center;
+    text-align: center;
+}
+
+body:has(.business-grid) #research-heading ~ .business-card a {
+    align-self: center;
+}
+
+
+body:has(.business-grid) #related-heading ~ p { text-align: center !important; margin-left: auto; margin-right: auto; }

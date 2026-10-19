@@ -1,0 +1,57 @@
+﻿/* Country cards: premium vertical layout */
+.country-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+}
+
+.country-grid > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    min-height: 175px !important;
+    padding: 24px 16px !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    color: #f8fafc !important;
+    text-decoration: none !important;
+    background: #121c2f !important;
+    border: 1px solid #34435b !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+}
+
+/* Country name */
+.country-grid > a strong {
+    display: block !important;
+    color: #f2cc63 !important;
+    font-size: 1.08rem !important;
+    white-space: normal !important;
+}
+
+/* Keep the link label on its own line */
+.country-grid > a br {
+    display: block !important;
+    content: "" !important;
+    margin: 4px 0 !important;
+}
+
+.country-grid > a:hover {
+    border-color: #d4af37 !important;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 700px) {
+    .country-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .country-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

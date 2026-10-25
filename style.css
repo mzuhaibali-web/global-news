@@ -3099,3 +3099,41 @@ body:has(#forgotForm) .auth-container > a:hover {
   }
 }
 /* END FORGOT PASSWORD PREMIUM DESIGN */
+
+/* FIX: Related News premium dark theme */
+.related-news-section {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border: 1px solid #374151;
+    border-radius: 18px;
+}
+
+.related-news-section h2,
+.related-news-section h3 {
+    color: #d8ae45 !important;
+}
+
+.related-news-section > p,
+.related-news-card p {
+    color: #e5e7eb !important;
+}
+
+.related-news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.related-news-card {
+    margin: 0 !important;
+    padding: 20px !important;
+    background: #1f2937 !important;
+    color: #f9fafb !important;
+    border: 1px solid #374151;
+    border-radius: 14px;
+}
+
+.related-news-card .read-more {
+    color: #f2cc63 !important;
+}
+
